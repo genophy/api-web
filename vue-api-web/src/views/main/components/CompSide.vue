@@ -113,8 +113,8 @@ export default {
 
     &.selected {
       font-weight      : 800;
-      color            : var(--c-bg);
-      background-color : var(--c-warn-sub);
+      color            : var(--c-white);
+      background-color : var(--c-blue);
     }
   }
 }

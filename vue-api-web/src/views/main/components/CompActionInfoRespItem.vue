@@ -16,12 +16,12 @@
   <div class="c__action-info-resp-item">
 
     <div class="resp-item">
-      <div class="resp-item__info" :class="{required:compParam.required}">
+      <div class="resp-item__info" :class="{required:compParam['required']}">
         <div class="seq">{{ seq || 0 }}</div>
-        <div class="name">{{ compParam.name || '-' }}</div>
-        <div class="type">{{ compParam.dataType || '-' }}</div>
-        <div class="value">{{ compParam.defaultValue || '-' }}</div>
-        <div class="desc">{{ compParam.description || '-' }}</div>
+        <div class="name">{{ compParam['name'] || '-' }}</div>
+        <div class="type">{{ compParam['dataType'] || '-' }}</div>
+        <div class="value">{{ compParam['defaultValue'] || '-' }}</div>
+        <div class="desc">{{ compParam['description'] || '-' }}</div>
       </div>
       <div v-if="compParam.list && compParam.list[0]" class="resp-item__children">
         <CompActionInfoRespList :list="compParam.list"></CompActionInfoRespList>
@@ -36,14 +36,13 @@
 
 <script>
 
-import CompActionInfoRespList from '@/views/main/components/CompActionInfoRespList';
 
 export default {
   name      : 'CompActionInfoRespItem',
-  components: {CompActionInfoRespList},
+  components: {},
   props     : {
     param: {
-      type   : Object,
+      type   : [Object, Array],
       default: null
     },
     seq  : {
@@ -54,15 +53,14 @@ export default {
   data() {
     return {
       isQuerying  : false,    // 是否正在查询
-      isSubmitting: false    // 是否正在提交
+      isSubmitting: false   // 是否正在提交
     };
   },
   computed  : {
     compParam() {
-      return this.param || {};
+      return this.param || Object.create(null);
     }
   },
-  watch     : {},
   created() {
   },
   mounted() {

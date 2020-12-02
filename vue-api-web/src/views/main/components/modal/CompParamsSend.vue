@@ -17,7 +17,7 @@
 
     <div class="c__params-send__body">
       <div class="c__params-send__side">
-        <div class="header">
+        <div class="ly-flex ly-justify-between ly-items-center ly-py-8">
           <div class="title">请求参数
             <el-tooltip content="重置" effect="dark">
               <i class="ixfont ix-fresh ly-hover ly-ml-16" @click="handleRestRequest"></i>
@@ -37,14 +37,23 @@
       </div>
 
       <div class="c__params-send__side">
-        <div class="header">
-          <div class="title">返回参数</div>
+        <div class="ly-flex ly-justify-between ly-items-center ly-py-8">
+          <div class="ly-flex-grow ly-flex  ly-items-center ">
+            <div class="title">返回参数</div>
+            <div class="ly-ml-8">
+              <el-radio-group v-model="responseType" size="mini">
+                <el-radio-button v-for="item in responseTypeList" :key="item.id" :label="item.id">{{ item.name }}</el-radio-button>
+              </el-radio-group>
+            </div>
+          </div>
+
           <div class="op">
             <el-button type="success" @click="handleSaveResponse">保存</el-button>
           </div>
         </div>
         <div class="body">
-          <el-input v-model="responseParamsStr" type="textarea" readonly :rows="20" resize="none"></el-input>
+          <el-input v-if="responseType === 1" v-model="responseParamsStr" type="textarea" readonly :rows="20" resize="none"></el-input>
+          <img v-else-if="responseType === 2" :src="responseParams" alt="">
         </div>
 
       </div>
@@ -72,8 +81,14 @@ export default {
       isSubmitting         : false,    // 是否正在提交
       requestParamsStr     : '', // 请求参数
       requestParamsStrCache: '', // 请求参数缓存
+      responseParams       : null, // 返回参数
       responseParamsStr    : '', // 返回参数
-      storageActionRequests: {}
+      storageActionRequests: {},
+      responseType         : 1,
+      responseTypeList     : [
+        {id: 1, name: '数据'},
+        {id: 2, name: '图片'}
+      ]
     };
   },
   computed: {},
@@ -153,8 +168,10 @@ export default {
         switch (this.info.requestMethod) {
           case 'POST':
             HttpClientUtil.postJsonData(url, requestParams).then(data => {
+              this.responseParams    = data;
               this.responseParamsStr = JSON.stringify(data || {}, null, ' ');
             }).catch(err => {
+              this.responseParams    = data;
               this.responseParamsStr = JSON.stringify(err || {}, null, ' ');
             }).finally(() => {
               this.isSubmitting = false;
@@ -162,8 +179,10 @@ export default {
             break;
           case 'GET':
             HttpClientUtil.get(url, requestParams).then(data => {
+              this.responseParams    = data;
               this.responseParamsStr = JSON.stringify(data || {}, null, ' ');
             }).catch(err => {
+              this.responseParams    = data;
               this.responseParamsStr = JSON.stringify(err || {}, null, ' ');
             }).finally(() => {
               this.isSubmitting = false;
@@ -292,11 +311,6 @@ export default {
     }
 
     .header {
-      display         : flex;
-      flex-flow       : row nowrap;
-      justify-content : space-between;
-      align-items     : center;
-      padding         : 8px 0;
     }
 
     .body {

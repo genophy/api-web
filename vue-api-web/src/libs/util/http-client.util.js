@@ -18,7 +18,7 @@ window.$axiosDownloadList = []; // 下载请求
 axios.defaults.timeout = 120000;
 
 /* url前缀 https://www.example.com:8080/<%=VUE_APP_URL_PREFIX%>/xxx */
-axios.defaults.baseURL = process.env.VUE_APP_URL_PREFIX || '/vue-api-web';
+axios.defaults.baseURL = process.env.VUE_APP_URL_PREFIX || '';
 
 // axios.defaults.transformRequest = [function (data) {
 //   return qs.stringify(data);

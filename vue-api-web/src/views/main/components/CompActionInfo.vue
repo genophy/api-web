@@ -39,7 +39,7 @@
           </div>
           <div class="req-op">
             <div class="req-op__item">
-              <el-button type="warning" size="mini" @click="handleMockSend(action.id, action.name,actionDetail)">发送请求</el-button>
+              <el-button type="primary" size="mini" @click="handleMockSend(action.id, action.name,actionDetail)">发送请求</el-button>
             </div>
           </div>
         </div>
@@ -75,15 +75,14 @@
 </template>
 
 <script>
-import { CommonsUtil, HttpClientUtil, ModalUtil } from '@/libs/util';
+import { HttpClientUtil, ModalUtil } from '@/libs/util';
 import CompActionInfoReqList from '@/views/main/components/CompActionInfoReqList';
-import CompActionInfoRespList from '@/views/main/components/CompActionInfoRespList';
 import CompParamsSend from '@/views/main/components/modal/CompParamsSend';
 import CompViewResponse from '@/views/main/components/modal/CompViewResponse';
 
 export default {
   name      : 'CompActionInfo',
-  components: {CompViewResponse, CompActionInfoRespList, CompActionInfoReqList},
+  components: {CompViewResponse, CompActionInfoReqList},
   props     : {
     action: {
       type: Object
@@ -218,8 +217,8 @@ export default {
     padding          : 4px 32px;
     font-size        : 14px;
     font-weight      : 800;
-    color            : var(--c-bg);
-    background-color : var(--c-warn-sub);
+    color            : var(--c-white);
+    background-color : var(--c-blue);
 
     pointer-events   : none;
   }
@@ -287,7 +286,7 @@ export default {
 
       &.req {
         color            : var(--c-white);
-        background-image : linear-gradient(to right, var(--c-warn), transparent);
+        background-image : linear-gradient(to right, var(--c-blue), transparent);
       }
 
       &.res {

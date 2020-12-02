@@ -14,7 +14,7 @@
 
 <template>
   <div class="c__action-info-resp-list">
-    <div v-for="(item,idx) in list" :key="idx" class="resp-list">
+    <div v-for="(item,idx) in compList" :key="item.id" class="resp-list">
       <CompActionInfoRespItem :param="item" :seq="idx +1"></CompActionInfoRespItem>
     </div>
 
@@ -39,8 +39,8 @@ export default {
   data() {
     return {
       isQuerying  : false,    // 是否正在查询
-      isSubmitting: false     // 是否正在提交
-
+      isSubmitting: false,     // 是否正在提交
+      compList    : []
     };
   },
   computed  : {},
@@ -48,6 +48,7 @@ export default {
   created() {
   },
   mounted() {
+    this.compList = this.list || [];
   },
   beforeDestroy() {},
   methods   : {
@@ -82,56 +83,6 @@ export default {
 .c__action-info-resp-list {
   position : relative;
   border   : 1px solid var(--c-border-thin);
-
-  .resp-list {
-
-
-    &__info {
-      display  : flex;
-      position : relative;
-      padding  : 8px 32px;
-
-      &.respuired:before {
-        content          : '';
-        display          : block;
-        position         : absolute;
-        top              : 30%;
-        left             : 16px;
-        height           : 40%;
-        width            : 6px;
-        background-image : linear-gradient(to right, var(--c-error), transparent);
-      }
-
-      .name {
-        min-width   : 100px;
-        font-weight : 800;
-      }
-
-      .label {
-        min-width : 200px;
-      }
-
-      .desc {
-        color     : var(--c-font-sub);
-        min-width : 200px;
-      }
-
-      .type {
-        min-width : 100px;
-
-      }
-
-      .value {
-        min-width : 100px;
-      }
-
-
-    }
-
-    &__children {
-      padding : 16px 56px;
-    }
-  }
 }
 </style>
 

@@ -113,7 +113,7 @@ export default {
   top              : 0;
   z-index          : 999;
   height           : 54px;
-  background-image : linear-gradient(to right, var(--c-warn), transparent);
+  background-image : linear-gradient(to right, var(--c-blue), transparent);
   background-color : var(--c-bg);
   border-bottom    : 1px solid var(--c-bg);
 

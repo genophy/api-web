@@ -4,12 +4,14 @@ import filters from '@/libs/filter';
 import router from '@/libs/router';
 import { Constants, LangUtil } from '@/libs/util';
 import * as xStore from '@/libs/x-store';
+import CompActionInfoRespList from '@/views/main/components/CompActionInfoRespList';
 import axios from 'axios';
 import elementResizeDetectorMaker from 'element-resize-detector';
 import ElementUI from 'element-ui';
 import lodash from 'lodash';
 import Vue from 'vue';
 import Clipboard from 'v-clipboard';
+
 
 Vue.config.productionTip = false;
 // directives
@@ -22,6 +24,10 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);
 });
 
+// 全局组件，适用于递归
+Vue.component('CompActionInfoRespList', CompActionInfoRespList);
+
+
 window.$elementResizer = elementResizeDetectorMaker();  // 元素大小改变监听实例
 
 window.$axios  = Vue.prototype.$axios = axios;
@@ -30,6 +36,7 @@ window.$xStore = Vue.prototype.$xStore = xStore;
 window.$router = router;
 Vue.use(ElementUI, {size: 'small', zIndex: 1000});
 Vue.use(Clipboard);
+
 
 // 项目路由列表
 const routePathTree    = LangUtil.recursionSetProperties(router.options.routes, (item, parent) => {
