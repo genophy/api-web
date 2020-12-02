@@ -1,0 +1,4841 @@
+[
+  {
+    "actionList": [
+      {
+        "description": null,
+        "detail": {
+          "description": null,
+          "mapping": "/projectDemo/security/getImage.do",
+          "requestMethod": "GET",
+          "requestParam": {
+            "description": null,
+            "params": [],
+            "type": "URL拼接参数 (示例: ?a=XX&&b=XX)"
+          },
+          "responseParam": {
+            "description": null,
+            "params": [
+              {
+                "actionId": 5,
+                "dataType": null,
+                "defaultValue": "null",
+                "description": "void",
+                "id": 10,
+                "list": [],
+                "name": "void",
+                "pclassName": "0",
+                "pid": 0,
+                "required": true,
+                "returnd": true
+              }
+            ],
+            "type": "BLOB二进制流"
+          }
+        },
+        "id": 5,
+        "methodUUID": "com.aai.controller.SecurityController-verificationCode",
+        "moduleId": 8,
+        "name": "获取图片验证码",
+        "requestDescription": null,
+        "responseDescription": null,
+        "sort": 2147483647
+      }, {
+        "description": null,
+        "detail": {
+          "description": null,
+          "mapping": "/projectDemo/security/getSmsCode.do",
+          "requestMethod": "POST",
+          "requestParam": {
+            "description": null,
+            "params": [
+              {
+                "actionId": 6,
+                "dataType": "string 字符串",
+                "defaultValue": "",
+                "description": "phone",
+                "id": 11,
+                "list": [],
+                "name": "phone",
+                "pclassName": "0",
+                "pid": 0,
+                "required": true,
+                "returnd": false
+              }
+            ],
+            "type": "FROM表单数据"
+          },
+          "responseParam": {
+            "description": null,
+            "params": [
+              {
+                "actionId": 6,
+                "dataType": "number 数字",
+                "defaultValue": "0",
+                "description": "返回状态",
+                "id": 13,
+                "list": [],
+                "name": "code",
+                "pclassName": "com.aai.bean.ResultUtil",
+                "pid": 12,
+                "required": true,
+                "returnd": true
+              }, {
+                "actionId": 6,
+                "dataType": "string 字符串",
+                "defaultValue": "",
+                "description": "返回信息",
+                "id": 14,
+                "list": [],
+                "name": "msg",
+                "pclassName": "com.aai.bean.ResultUtil",
+                "pid": 12,
+                "required": true,
+                "returnd": true
+              }, {
+                "actionId": 6,
+                "dataType": "object 对象: Object",
+                "defaultValue": "null",
+                "description": "返回结果",
+                "id": 15,
+                "list": [],
+                "name": "data",
+                "pclassName": "com.aai.bean.ResultUtil",
+                "pid": 12,
+                "required": true,
+                "returnd": true
+              }
+            ],
+            "type": "JSON类型数据"
+          }
+        },
+        "id": 6,
+        "methodUUID": "com.aai.controller.SecurityController-getSmsCode",
+        "moduleId": 8,
+        "name": "获取短信验证码",
+        "requestDescription": null,
+        "responseDescription": null,
+        "sort": 2147483647
+      }
+    ],
+    "classList": "com.aai.controller.SecurityController",
+    "id": 8,
+    "name": "系统-验证",
+    "packageName": "com.aai",
+    "sort": 1
+  }, {
+  "actionList": [
+    {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/applets/myInfo.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 11,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "name",
+              "id": 17,
+              "list": [],
+              "name": "name",
+              "pclassName": "0",
+              "pid": 16,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 11,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 19,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 18,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 11,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 20,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 18,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 11,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 21,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 18,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 11,
+      "methodUUID": "com.aai.controller.applets.AppletsLoginController-myInfo",
+      "moduleId": 3,
+      "name": "个人中心信息查询",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/applets/logout.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 9,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "name",
+              "id": 23,
+              "list": [],
+              "name": "name",
+              "pclassName": "0",
+              "pid": 22,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 9,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 25,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 24,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 9,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 26,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 24,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 9,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 27,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 24,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 9,
+      "methodUUID": "com.aai.controller.applets.AppletsLoginController-logout",
+      "moduleId": 3,
+      "name": "注销小程序登录",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/applets/bindUnionId.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "wx.login获得值",
+              "id": 29,
+              "list": [],
+              "name": "resCode",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "首次刷新小程序获得的token",
+              "id": 30,
+              "list": [],
+              "name": "token",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 31,
+              "list": [],
+              "name": "sessionKey",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 32,
+              "list": [],
+              "name": "privateKey",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 33,
+              "list": [],
+              "name": "encryptedData",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 34,
+              "list": [],
+              "name": "iv",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "customerId",
+              "id": 35,
+              "list": [],
+              "name": "customerId",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "customerNo",
+              "id": 36,
+              "list": [],
+              "name": "customerNo",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "phone",
+              "id": 37,
+              "list": [],
+              "name": "phone",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "nickName",
+              "id": 38,
+              "list": [],
+              "name": "nickName",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "headImg",
+              "id": 39,
+              "list": [],
+              "name": "headImg",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "customImg",
+              "id": 40,
+              "list": [],
+              "name": "customImg",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "openId",
+              "id": 41,
+              "list": [],
+              "name": "openId",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "unionId",
+              "id": 42,
+              "list": [],
+              "name": "unionId",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "balance",
+              "id": 43,
+              "list": [],
+              "name": "balance",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 12,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "registerTime",
+              "id": 44,
+              "list": [],
+              "name": "registerTime",
+              "pclassName": "0",
+              "pid": 28,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 12,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 46,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 45,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 12,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 47,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 45,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 12,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 48,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 45,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 12,
+      "methodUUID": "com.aai.controller.applets.AppletsLoginController-getUnionId",
+      "moduleId": 3,
+      "name": "绑定微信用户信息",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/applets/bindPhone.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "wx.login获得值",
+              "id": 50,
+              "list": [],
+              "name": "resCode",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "首次刷新小程序获得的token",
+              "id": 51,
+              "list": [],
+              "name": "token",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 52,
+              "list": [],
+              "name": "sessionKey",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 53,
+              "list": [],
+              "name": "privateKey",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 54,
+              "list": [],
+              "name": "encryptedData",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 55,
+              "list": [],
+              "name": "iv",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "customerId",
+              "id": 56,
+              "list": [],
+              "name": "customerId",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "customerNo",
+              "id": 57,
+              "list": [],
+              "name": "customerNo",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "phone",
+              "id": 58,
+              "list": [],
+              "name": "phone",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "nickName",
+              "id": 59,
+              "list": [],
+              "name": "nickName",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "headImg",
+              "id": 60,
+              "list": [],
+              "name": "headImg",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "customImg",
+              "id": 61,
+              "list": [],
+              "name": "customImg",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "openId",
+              "id": 62,
+              "list": [],
+              "name": "openId",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "unionId",
+              "id": 63,
+              "list": [],
+              "name": "unionId",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "balance",
+              "id": 64,
+              "list": [],
+              "name": "balance",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 7,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "registerTime",
+              "id": 65,
+              "list": [],
+              "name": "registerTime",
+              "pclassName": "0",
+              "pid": 49,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 7,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 67,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 66,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 7,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 68,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 66,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 7,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 69,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 66,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 7,
+      "methodUUID": "com.aai.controller.applets.AppletsLoginController-bind",
+      "moduleId": 3,
+      "name": "绑定手机号",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/applets/setHeadImg.do",
+        "requestMethod": "GET",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 13,
+              "dataType": "file 文件",
+              "defaultValue": "null",
+              "description": "file",
+              "id": 70,
+              "list": [],
+              "name": "file",
+              "pclassName": "0",
+              "pid": 0,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "URL拼接参数 (示例: ?a=XX&&b=XX)"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 13,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 72,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 71,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 13,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 73,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 71,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 13,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 74,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 71,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 13,
+      "methodUUID": "com.aai.controller.applets.AppletsLoginController-setHeadImg",
+      "moduleId": 3,
+      "name": "自定义头像",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/applets/getPhone.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "wx.login获得值",
+              "id": 76,
+              "list": [],
+              "name": "resCode",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "首次刷新小程序获得的token",
+              "id": 77,
+              "list": [],
+              "name": "token",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 78,
+              "list": [],
+              "name": "sessionKey",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 79,
+              "list": [],
+              "name": "privateKey",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 80,
+              "list": [],
+              "name": "encryptedData",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 81,
+              "list": [],
+              "name": "iv",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "customerId",
+              "id": 82,
+              "list": [],
+              "name": "customerId",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "customerNo",
+              "id": 83,
+              "list": [],
+              "name": "customerNo",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "phone",
+              "id": 84,
+              "list": [],
+              "name": "phone",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "nickName",
+              "id": 85,
+              "list": [],
+              "name": "nickName",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "headImg",
+              "id": 86,
+              "list": [],
+              "name": "headImg",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "customImg",
+              "id": 87,
+              "list": [],
+              "name": "customImg",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "openId",
+              "id": 88,
+              "list": [],
+              "name": "openId",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "unionId",
+              "id": 89,
+              "list": [],
+              "name": "unionId",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "balance",
+              "id": 90,
+              "list": [],
+              "name": "balance",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 10,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "registerTime",
+              "id": 91,
+              "list": [],
+              "name": "registerTime",
+              "pclassName": "0",
+              "pid": 75,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 10,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 93,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 92,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 10,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 94,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 92,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 10,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 95,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 92,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 10,
+      "methodUUID": "com.aai.controller.applets.AppletsLoginController-getPhone",
+      "moduleId": 3,
+      "name": "获取用户手机号",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/applets/login.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "wx.login获得值",
+              "id": 97,
+              "list": [],
+              "name": "resCode",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "首次刷新小程序获得的token",
+              "id": 98,
+              "list": [],
+              "name": "token",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 99,
+              "list": [],
+              "name": "sessionKey",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 100,
+              "list": [],
+              "name": "privateKey",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 101,
+              "list": [],
+              "name": "encryptedData",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "小程序参数",
+              "id": 102,
+              "list": [],
+              "name": "iv",
+              "pclassName": "com.aai.bean.WechatUser",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "customerId",
+              "id": 103,
+              "list": [],
+              "name": "customerId",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "customerNo",
+              "id": 104,
+              "list": [],
+              "name": "customerNo",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "phone",
+              "id": 105,
+              "list": [],
+              "name": "phone",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "nickName",
+              "id": 106,
+              "list": [],
+              "name": "nickName",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "headImg",
+              "id": 107,
+              "list": [],
+              "name": "headImg",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "customImg",
+              "id": 108,
+              "list": [],
+              "name": "customImg",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "openId",
+              "id": 109,
+              "list": [],
+              "name": "openId",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "unionId",
+              "id": 110,
+              "list": [],
+              "name": "unionId",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "balance",
+              "id": 111,
+              "list": [],
+              "name": "balance",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 8,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "registerTime",
+              "id": 112,
+              "list": [],
+              "name": "registerTime",
+              "pclassName": "0",
+              "pid": 96,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 8,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 114,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 113,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 8,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 115,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 113,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 8,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 116,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 113,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 8,
+      "methodUUID": "com.aai.controller.applets.AppletsLoginController-login",
+      "moduleId": 3,
+      "name": "通过code获取登录token",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }
+  ],
+  "classList": "com.aai.controller.applets.AppletsLoginController",
+  "id": 3,
+  "name": "小程序-登录",
+  "packageName": "com.aai",
+  "sort": 2
+}, {
+  "actionList": [
+    {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/other/login.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 2,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "账号",
+              "id": 2,
+              "list": [],
+              "name": "account",
+              "pclassName": "com.aai.bean.UserBean",
+              "pid": 1,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 2,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "密码",
+              "id": 3,
+              "list": [],
+              "name": "password",
+              "pclassName": "com.aai.bean.UserBean",
+              "pid": 1,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 2,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "验证码",
+              "id": 4,
+              "list": [],
+              "name": "vcode",
+              "pclassName": "com.aai.bean.UserBean",
+              "pid": 1,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 2,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "登录方式 1-账号密码 2-账号短信",
+              "id": 5,
+              "list": [],
+              "name": "type",
+              "pclassName": "com.aai.bean.UserBean",
+              "pid": 1,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 2,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 7,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 6,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 2,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 8,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 6,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 2,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 9,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 6,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 2,
+      "methodUUID": "com.aai.controller.LoginController-login",
+      "moduleId": 2,
+      "name": "后台登录",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/other/signOut.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [],
+          "type": "FROM表单数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 4,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 118,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 117,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 4,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 119,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 117,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 4,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 120,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 117,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 4,
+      "methodUUID": "com.aai.controller.LoginController-signOut",
+      "moduleId": 2,
+      "name": "后台退出登录",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/other/permissions.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 1,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "name",
+              "id": 122,
+              "list": [],
+              "name": "name",
+              "pclassName": "0",
+              "pid": 121,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 1,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 124,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 123,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 1,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 125,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 123,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 1,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 126,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 123,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 1,
+      "methodUUID": "com.aai.controller.LoginController-permissions",
+      "moduleId": 2,
+      "name": "获取登录用户权限",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/other/setPwd.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 3,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "管理员主键",
+              "id": 128,
+              "list": [],
+              "name": "userId",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "账号",
+              "id": 129,
+              "list": [],
+              "name": "account",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "密码",
+              "id": 130,
+              "list": [],
+              "name": "password",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "验证码",
+              "id": 131,
+              "list": [],
+              "name": "vcode",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "状态 ，0=冻结，1=正常",
+              "id": 132,
+              "list": [],
+              "name": "state",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "角色",
+              "id": 133,
+              "list": [],
+              "name": "roleId",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "新密码",
+              "id": 134,
+              "list": [],
+              "name": "newPwd",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "旧密码",
+              "id": 135,
+              "list": [],
+              "name": "oldPwd",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": null,
+              "defaultValue": "null",
+              "description": "充电站集合",
+              "id": 136,
+              "list": [],
+              "name": "staIds",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageNow",
+              "id": 137,
+              "list": [],
+              "name": "pageNow",
+              "pclassName": "0",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 3,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageSize",
+              "id": 138,
+              "list": [],
+              "name": "pageSize",
+              "pclassName": "0",
+              "pid": 127,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 3,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 140,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 139,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 3,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 141,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 139,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 3,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 142,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 139,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 3,
+      "methodUUID": "com.aai.controller.LoginController-setPwd",
+      "moduleId": 2,
+      "name": "设置密码",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }
+  ],
+  "classList": "com.aai.controller.LoginController",
+  "id": 2,
+  "name": "系统-登录",
+  "packageName": "com.aai",
+  "sort": 3
+}, {
+  "actionList": [
+    {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/log/list.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 14,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "操作业务名",
+              "id": 144,
+              "list": [],
+              "name": "name",
+              "pclassName": "com.aai.entity.vo.LogVo",
+              "pid": 143,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 14,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "操作类型,(添加ADD,删除DELETE,修改UPDATE)",
+              "id": 145,
+              "list": [],
+              "name": "type",
+              "pclassName": "com.aai.entity.vo.LogVo",
+              "pid": 143,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 14,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "操作人",
+              "id": 146,
+              "list": [],
+              "name": "account",
+              "pclassName": "com.aai.entity.vo.LogVo",
+              "pid": 143,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 14,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "开始时间",
+              "id": 147,
+              "list": [],
+              "name": "startTime",
+              "pclassName": "com.aai.entity.vo.LogVo",
+              "pid": 143,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 14,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "结束时间",
+              "id": 148,
+              "list": [],
+              "name": "endTime",
+              "pclassName": "com.aai.entity.vo.LogVo",
+              "pid": 143,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 14,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageNow",
+              "id": 149,
+              "list": [],
+              "name": "pageNow",
+              "pclassName": "0",
+              "pid": 143,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 14,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageSize",
+              "id": 150,
+              "list": [],
+              "name": "pageSize",
+              "pclassName": "0",
+              "pid": 143,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 14,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 152,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 151,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 14,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 153,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 151,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 14,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 154,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 151,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 14,
+      "methodUUID": "com.aai.controller.LogController-list",
+      "moduleId": 5,
+      "name": "操作日志",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }
+  ],
+  "classList": "com.aai.controller.LogController",
+  "id": 5,
+  "name": "系统-日志",
+  "packageName": "com.aai",
+  "sort": 4
+}, {
+  "actionList": [
+    {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/user/deleteUser.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 17,
+              "dataType": "object 对象: Map",
+              "defaultValue": "null",
+              "description": "map",
+              "id": 155,
+              "list": [],
+              "name": "map",
+              "pclassName": "0",
+              "pid": 0,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 17,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 157,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 156,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 17,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 158,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 156,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 17,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 159,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 156,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 17,
+      "methodUUID": "com.aai.controller.UserController-deleteUser",
+      "moduleId": 1,
+      "name": "删除管理员",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/user/addUser.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 19,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "管理员主键",
+              "id": 161,
+              "list": [],
+              "name": "userId",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "账号",
+              "id": 162,
+              "list": [],
+              "name": "account",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "密码",
+              "id": 163,
+              "list": [],
+              "name": "password",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "验证码",
+              "id": 164,
+              "list": [],
+              "name": "vcode",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "状态 ，0=冻结，1=正常",
+              "id": 165,
+              "list": [],
+              "name": "state",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "角色",
+              "id": 166,
+              "list": [],
+              "name": "roleId",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "新密码",
+              "id": 167,
+              "list": [],
+              "name": "newPwd",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "旧密码",
+              "id": 168,
+              "list": [],
+              "name": "oldPwd",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": null,
+              "defaultValue": "null",
+              "description": "充电站集合",
+              "id": 169,
+              "list": [],
+              "name": "staIds",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageNow",
+              "id": 170,
+              "list": [],
+              "name": "pageNow",
+              "pclassName": "0",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 19,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageSize",
+              "id": 171,
+              "list": [],
+              "name": "pageSize",
+              "pclassName": "0",
+              "pid": 160,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 19,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 173,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 172,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 19,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 174,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 172,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 19,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 175,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 172,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 19,
+      "methodUUID": "com.aai.controller.UserController-addUser",
+      "moduleId": 1,
+      "name": "添加管理员",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/user/list.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 15,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "管理员主键",
+              "id": 177,
+              "list": [],
+              "name": "userId",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "账号",
+              "id": 178,
+              "list": [],
+              "name": "account",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "密码",
+              "id": 179,
+              "list": [],
+              "name": "password",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "验证码",
+              "id": 180,
+              "list": [],
+              "name": "vcode",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "状态 ，0=冻结，1=正常",
+              "id": 181,
+              "list": [],
+              "name": "state",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "角色",
+              "id": 182,
+              "list": [],
+              "name": "roleId",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "新密码",
+              "id": 183,
+              "list": [],
+              "name": "newPwd",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "旧密码",
+              "id": 184,
+              "list": [],
+              "name": "oldPwd",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": null,
+              "defaultValue": "null",
+              "description": "充电站集合",
+              "id": 185,
+              "list": [],
+              "name": "staIds",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageNow",
+              "id": 186,
+              "list": [],
+              "name": "pageNow",
+              "pclassName": "0",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 15,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageSize",
+              "id": 187,
+              "list": [],
+              "name": "pageSize",
+              "pclassName": "0",
+              "pid": 176,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 15,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 189,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 188,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 15,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 190,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 188,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 15,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 191,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 188,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 15,
+      "methodUUID": "com.aai.controller.UserController-list",
+      "moduleId": 1,
+      "name": "管理员列表",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/user/updateUser.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 16,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "管理员主键",
+              "id": 193,
+              "list": [],
+              "name": "userId",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "账号",
+              "id": 194,
+              "list": [],
+              "name": "account",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "密码",
+              "id": 195,
+              "list": [],
+              "name": "password",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "验证码",
+              "id": 196,
+              "list": [],
+              "name": "vcode",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "状态 ，0=冻结，1=正常",
+              "id": 197,
+              "list": [],
+              "name": "state",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "角色",
+              "id": 198,
+              "list": [],
+              "name": "roleId",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "新密码",
+              "id": 199,
+              "list": [],
+              "name": "newPwd",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "旧密码",
+              "id": 200,
+              "list": [],
+              "name": "oldPwd",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": null,
+              "defaultValue": "null",
+              "description": "充电站集合",
+              "id": 201,
+              "list": [],
+              "name": "staIds",
+              "pclassName": "com.aai.entity.vo.UserVo",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageNow",
+              "id": 202,
+              "list": [],
+              "name": "pageNow",
+              "pclassName": "0",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 16,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageSize",
+              "id": 203,
+              "list": [],
+              "name": "pageSize",
+              "pclassName": "0",
+              "pid": 192,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 16,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 205,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 204,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 16,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 206,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 204,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 16,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 207,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 204,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 16,
+      "methodUUID": "com.aai.controller.UserController-updateUser",
+      "moduleId": 1,
+      "name": "编辑管理员",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/user/pullDownRole.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 18,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "name",
+              "id": 209,
+              "list": [],
+              "name": "name",
+              "pclassName": "0",
+              "pid": 208,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 18,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 211,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 210,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 18,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 212,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 210,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 18,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 213,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 210,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 18,
+      "methodUUID": "com.aai.controller.UserController-pullDownRole",
+      "moduleId": 1,
+      "name": "角色下拉",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/user/resetPwd.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 20,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "用户主键",
+              "id": 215,
+              "list": [],
+              "name": "userId",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "账号",
+              "id": 216,
+              "list": [],
+              "name": "account",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "手机号",
+              "id": 217,
+              "list": [],
+              "name": "phone",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "密码",
+              "id": 218,
+              "list": [],
+              "name": "password",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "角色",
+              "id": 219,
+              "list": [],
+              "name": "roleId",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "状态，0=冻结，1=正常",
+              "id": 220,
+              "list": [],
+              "name": "state",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "最后登录时间",
+              "id": 221,
+              "list": [],
+              "name": "lastLoginTime",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "是否为超管 0-为普通用户 1-管理员",
+              "id": 222,
+              "list": [],
+              "name": "isAdmin",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "创建时间",
+              "id": 223,
+              "list": [],
+              "name": "createTime",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "创建人",
+              "id": 224,
+              "list": [],
+              "name": "creator",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "修改时间",
+              "id": 225,
+              "list": [],
+              "name": "editTime",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "修改人",
+              "id": 226,
+              "list": [],
+              "name": "editor",
+              "pclassName": "com.aai.entity.User",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "roleName",
+              "id": 227,
+              "list": [],
+              "name": "roleName",
+              "pclassName": "0",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageNow",
+              "id": 228,
+              "list": [],
+              "name": "pageNow",
+              "pclassName": "0",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 20,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "pageSize",
+              "id": 229,
+              "list": [],
+              "name": "pageSize",
+              "pclassName": "0",
+              "pid": 214,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 20,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 231,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 230,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 20,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 232,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 230,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 20,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 233,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 230,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 20,
+      "methodUUID": "com.aai.controller.UserController-resetPwd",
+      "moduleId": 1,
+      "name": "重置密码",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }
+  ],
+  "classList": "com.aai.controller.UserController",
+  "id": 1,
+  "name": "系统-管理者",
+  "packageName": "com.aai",
+  "sort": 5
+}, {
+  "actionList": [
+    {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/menu/menuList.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 26,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "menuId",
+              "id": 235,
+              "list": [],
+              "name": "menuId",
+              "pclassName": "0",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "菜单名",
+              "id": 236,
+              "list": [],
+              "name": "title",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "图标",
+              "id": 237,
+              "list": [],
+              "name": "icon",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "前端访问地址",
+              "id": 238,
+              "list": [],
+              "name": "url",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "资源地址",
+              "id": 239,
+              "list": [],
+              "name": "href",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "权限",
+              "id": 240,
+              "list": [],
+              "name": "perms",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "父节点",
+              "id": 241,
+              "list": [],
+              "name": "parentId",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "sorting",
+              "id": 242,
+              "list": [],
+              "name": "sorting",
+              "pclassName": "0",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "1-一级 2-二级 3-按钮",
+              "id": 243,
+              "list": [],
+              "name": "menuType",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "parentName",
+              "id": 244,
+              "list": [],
+              "name": "parentName",
+              "pclassName": "0",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": null,
+              "defaultValue": "null",
+              "description": "childMenu",
+              "id": 245,
+              "list": [],
+              "name": "childMenu",
+              "pclassName": "0",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 26,
+              "dataType": "boolean 布尔类型（是/否）",
+              "defaultValue": "null",
+              "description": "checked",
+              "id": 246,
+              "list": [],
+              "name": "checked",
+              "pclassName": "0",
+              "pid": 234,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 26,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 248,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 247,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 26,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 249,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 247,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 26,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 250,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 247,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 26,
+      "methodUUID": "com.aai.controller.SysMenuController-menuList",
+      "moduleId": 7,
+      "name": "所有菜单列表",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/menu/deleteMenu.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 24,
+              "dataType": "object 对象: Map",
+              "defaultValue": "null",
+              "description": "map",
+              "id": 251,
+              "list": [],
+              "name": "map",
+              "pclassName": "0",
+              "pid": 0,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 24,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 253,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 252,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 24,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 254,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 252,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 24,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 255,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 252,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 24,
+      "methodUUID": "com.aai.controller.SysMenuController-deleteById",
+      "moduleId": 7,
+      "name": "批量删除菜单",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/menu/addMenu.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 21,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "menuId",
+              "id": 257,
+              "list": [],
+              "name": "menuId",
+              "pclassName": "0",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "菜单名",
+              "id": 258,
+              "list": [],
+              "name": "title",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "图标",
+              "id": 259,
+              "list": [],
+              "name": "icon",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "前端访问地址",
+              "id": 260,
+              "list": [],
+              "name": "url",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "资源地址",
+              "id": 261,
+              "list": [],
+              "name": "href",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "权限",
+              "id": 262,
+              "list": [],
+              "name": "perms",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "父节点",
+              "id": 263,
+              "list": [],
+              "name": "parentId",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "sorting",
+              "id": 264,
+              "list": [],
+              "name": "sorting",
+              "pclassName": "0",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "1-一级 2-二级 3-按钮",
+              "id": 265,
+              "list": [],
+              "name": "menuType",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "parentName",
+              "id": 266,
+              "list": [],
+              "name": "parentName",
+              "pclassName": "0",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": null,
+              "defaultValue": "null",
+              "description": "childMenu",
+              "id": 267,
+              "list": [],
+              "name": "childMenu",
+              "pclassName": "0",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 21,
+              "dataType": "boolean 布尔类型（是/否）",
+              "defaultValue": "null",
+              "description": "checked",
+              "id": 268,
+              "list": [],
+              "name": "checked",
+              "pclassName": "0",
+              "pid": 256,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 21,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 270,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 269,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 21,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 271,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 269,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 21,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 272,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 269,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 21,
+      "methodUUID": "com.aai.controller.SysMenuController-add",
+      "moduleId": 7,
+      "name": "添加菜单",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/menu/updateMenu.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 25,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "menuId",
+              "id": 274,
+              "list": [],
+              "name": "menuId",
+              "pclassName": "0",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "菜单名",
+              "id": 275,
+              "list": [],
+              "name": "title",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "图标",
+              "id": 276,
+              "list": [],
+              "name": "icon",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "前端访问地址",
+              "id": 277,
+              "list": [],
+              "name": "url",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "资源地址",
+              "id": 278,
+              "list": [],
+              "name": "href",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "权限",
+              "id": 279,
+              "list": [],
+              "name": "perms",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "父节点",
+              "id": 280,
+              "list": [],
+              "name": "parentId",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "sorting",
+              "id": 281,
+              "list": [],
+              "name": "sorting",
+              "pclassName": "0",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "1-一级 2-二级 3-按钮",
+              "id": 282,
+              "list": [],
+              "name": "menuType",
+              "pclassName": "com.aai.entity.SysMenu",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "parentName",
+              "id": 283,
+              "list": [],
+              "name": "parentName",
+              "pclassName": "0",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": null,
+              "defaultValue": "null",
+              "description": "childMenu",
+              "id": 284,
+              "list": [],
+              "name": "childMenu",
+              "pclassName": "0",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 25,
+              "dataType": "boolean 布尔类型（是/否）",
+              "defaultValue": "null",
+              "description": "checked",
+              "id": 285,
+              "list": [],
+              "name": "checked",
+              "pclassName": "0",
+              "pid": 273,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 25,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 287,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 286,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 25,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 288,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 286,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 25,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 289,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 286,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 25,
+      "methodUUID": "com.aai.controller.SysMenuController-updateResources",
+      "moduleId": 7,
+      "name": "编辑菜单",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/menu/getMenuById.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 22,
+              "dataType": "object 对象: Map",
+              "defaultValue": "null",
+              "description": "mapVo",
+              "id": 290,
+              "list": [],
+              "name": "mapVo",
+              "pclassName": "0",
+              "pid": 0,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 22,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 292,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 291,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 22,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 293,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 291,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 22,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 294,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 291,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 22,
+      "methodUUID": "com.aai.controller.SysMenuController-getById",
+      "moduleId": 7,
+      "name": "菜单详情",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/menu/permissionRole.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 23,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "roleId",
+              "id": 296,
+              "list": [],
+              "name": "roleId",
+              "pclassName": "0",
+              "pid": 295,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 23,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "name",
+              "id": 297,
+              "list": [],
+              "name": "name",
+              "pclassName": "0",
+              "pid": 295,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 23,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "remark",
+              "id": 298,
+              "list": [],
+              "name": "remark",
+              "pclassName": "0",
+              "pid": 295,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 23,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "createTime",
+              "id": 299,
+              "list": [],
+              "name": "createTime",
+              "pclassName": "0",
+              "pid": 295,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 23,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "resIds",
+              "id": 300,
+              "list": [],
+              "name": "resIds",
+              "pclassName": "0",
+              "pid": 295,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 23,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 302,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 301,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 23,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 303,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 301,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 23,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 304,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 301,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 23,
+      "methodUUID": "com.aai.controller.SysMenuController-permissioRole",
+      "moduleId": 7,
+      "name": "角色分配的菜单查询",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }
+  ],
+  "classList": "com.aai.controller.SysMenuController",
+  "id": 7,
+  "name": "系统-菜单",
+  "packageName": "com.aai",
+  "sort": 6
+}, {
+  "actionList": [
+    {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/role/deleteRole.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 30,
+              "dataType": "object 对象: Map",
+              "defaultValue": "null",
+              "description": "map",
+              "id": 305,
+              "list": [],
+              "name": "map",
+              "pclassName": "0",
+              "pid": 0,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 30,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 307,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 306,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 30,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 308,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 306,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 30,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 309,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 306,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 30,
+      "methodUUID": "com.aai.controller.SysRoleController-deleteRole",
+      "moduleId": 6,
+      "name": "删除角色",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/role/checkRoleName.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 32,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "name",
+              "id": 311,
+              "list": [],
+              "name": "name",
+              "pclassName": "0",
+              "pid": 310,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 32,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 313,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 312,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 32,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 314,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 312,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 32,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 315,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 312,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 32,
+      "methodUUID": "com.aai.controller.SysRoleController-checkRoleName",
+      "moduleId": 6,
+      "name": "校验角色名是否存在",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/role/addRole.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 28,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "roleId",
+              "id": 317,
+              "list": [],
+              "name": "roleId",
+              "pclassName": "0",
+              "pid": 316,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 28,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "name",
+              "id": 318,
+              "list": [],
+              "name": "name",
+              "pclassName": "0",
+              "pid": 316,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 28,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "remark",
+              "id": 319,
+              "list": [],
+              "name": "remark",
+              "pclassName": "0",
+              "pid": 316,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 28,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "createTime",
+              "id": 320,
+              "list": [],
+              "name": "createTime",
+              "pclassName": "0",
+              "pid": 316,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 28,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "resIds",
+              "id": 321,
+              "list": [],
+              "name": "resIds",
+              "pclassName": "0",
+              "pid": 316,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 28,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 323,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 322,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 28,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 324,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 322,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 28,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 325,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 322,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 28,
+      "methodUUID": "com.aai.controller.SysRoleController-addRole",
+      "moduleId": 6,
+      "name": "添加角色",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/role/updateRole.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 31,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "roleId",
+              "id": 327,
+              "list": [],
+              "name": "roleId",
+              "pclassName": "0",
+              "pid": 326,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 31,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "name",
+              "id": 328,
+              "list": [],
+              "name": "name",
+              "pclassName": "0",
+              "pid": 326,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 31,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "remark",
+              "id": 329,
+              "list": [],
+              "name": "remark",
+              "pclassName": "0",
+              "pid": 326,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 31,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "createTime",
+              "id": 330,
+              "list": [],
+              "name": "createTime",
+              "pclassName": "0",
+              "pid": 326,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 31,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "resIds",
+              "id": 331,
+              "list": [],
+              "name": "resIds",
+              "pclassName": "0",
+              "pid": 326,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 31,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 333,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 332,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 31,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 334,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 332,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 31,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 335,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 332,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 31,
+      "methodUUID": "com.aai.controller.SysRoleController-updateRole",
+      "moduleId": 6,
+      "name": "编辑角色",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/role/roleList.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 29,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "当前页 默认1",
+              "id": 337,
+              "list": [],
+              "name": "pageNow",
+              "pclassName": "com.aai.entity.vo.PageVo",
+              "pid": 336,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 29,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "每页显示数 默认10",
+              "id": 338,
+              "list": [],
+              "name": "pageSize",
+              "pclassName": "com.aai.entity.vo.PageVo",
+              "pid": 336,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 29,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 340,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 339,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 29,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 341,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 339,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 29,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 342,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 339,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 29,
+      "methodUUID": "com.aai.controller.SysRoleController-roleList",
+      "moduleId": 6,
+      "name": "角色列表",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemo/sys/role/getRoleById.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 27,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "roleId",
+              "id": 344,
+              "list": [],
+              "name": "roleId",
+              "pclassName": "0",
+              "pid": 343,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 27,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "name",
+              "id": 345,
+              "list": [],
+              "name": "name",
+              "pclassName": "0",
+              "pid": 343,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 27,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "remark",
+              "id": 346,
+              "list": [],
+              "name": "remark",
+              "pclassName": "0",
+              "pid": 343,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 27,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "createTime",
+              "id": 347,
+              "list": [],
+              "name": "createTime",
+              "pclassName": "0",
+              "pid": 343,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 27,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "resIds",
+              "id": 348,
+              "list": [],
+              "name": "resIds",
+              "pclassName": "0",
+              "pid": 343,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 27,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 350,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 349,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 27,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 351,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 349,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 27,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 352,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 349,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 27,
+      "methodUUID": "com.aai.controller.SysRoleController-getRole",
+      "moduleId": 6,
+      "name": "角色详情",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }
+  ],
+  "classList": "com.aai.controller.SysRoleController",
+  "id": 6,
+  "name": "系统-角色",
+  "packageName": "com.aai",
+  "sort": 7
+}, {
+  "actionList": [
+    {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemoother/getAreaInfo.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [],
+          "type": "FROM表单数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 35,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 354,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 353,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 35,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 355,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 353,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 35,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 356,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 353,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 35,
+      "methodUUID": "com.aai.controller.OtherController-getAreaInfo",
+      "moduleId": 4,
+      "name": "地区查询",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemoother/getSysParam.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 33,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "主键",
+              "id": 358,
+              "list": [],
+              "name": "id",
+              "pclassName": "com.aai.entity.Params",
+              "pid": 357,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 33,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "参数key",
+              "id": 359,
+              "list": [],
+              "name": "paramKey",
+              "pclassName": "com.aai.entity.Params",
+              "pid": 357,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 33,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "参数描述",
+              "id": 360,
+              "list": [],
+              "name": "paramKeyDesc",
+              "pclassName": "com.aai.entity.Params",
+              "pid": 357,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 33,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "参数值",
+              "id": 361,
+              "list": [],
+              "name": "paramValue",
+              "pclassName": "com.aai.entity.Params",
+              "pid": 357,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 33,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "参数值描述",
+              "id": 362,
+              "list": [],
+              "name": "paramValueDesc",
+              "pclassName": "com.aai.entity.Params",
+              "pid": 357,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 33,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "最后修改时间",
+              "id": 363,
+              "list": [],
+              "name": "lastUpdateTime",
+              "pclassName": "com.aai.entity.Params",
+              "pid": 357,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 33,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "最后修改人员",
+              "id": 364,
+              "list": [],
+              "name": "lastOperater",
+              "pclassName": "com.aai.entity.Params",
+              "pid": 357,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 33,
+              "dataType": "date 日期时间",
+              "defaultValue": "null",
+              "description": "记录有效时间",
+              "id": 365,
+              "list": [],
+              "name": "effectiveTime",
+              "pclassName": "com.aai.entity.Params",
+              "pid": 357,
+              "required": true,
+              "returnd": false
+            }, {
+              "actionId": 33,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "排序标志",
+              "id": 366,
+              "list": [],
+              "name": "sortValue",
+              "pclassName": "com.aai.entity.Params",
+              "pid": 357,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 33,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 368,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 367,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 33,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 369,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 367,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 33,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 370,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 367,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 33,
+      "methodUUID": "com.aai.controller.OtherController-getSysParam",
+      "moduleId": 4,
+      "name": "系统字典查询",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }, {
+      "description": null,
+      "detail": {
+        "description": null,
+        "mapping": "/projectDemoother/getTemplate.do",
+        "requestMethod": "POST",
+        "requestParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 34,
+              "dataType": "object 对象: Map",
+              "defaultValue": "null",
+              "description": "map",
+              "id": 371,
+              "list": [],
+              "name": "map",
+              "pclassName": "0",
+              "pid": 0,
+              "required": true,
+              "returnd": false
+            }
+          ],
+          "type": "JSON类型数据"
+        },
+        "responseParam": {
+          "description": null,
+          "params": [
+            {
+              "actionId": 34,
+              "dataType": "number 数字",
+              "defaultValue": "0",
+              "description": "返回状态",
+              "id": 373,
+              "list": [],
+              "name": "code",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 372,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 34,
+              "dataType": "string 字符串",
+              "defaultValue": "",
+              "description": "返回信息",
+              "id": 374,
+              "list": [],
+              "name": "msg",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 372,
+              "required": true,
+              "returnd": true
+            }, {
+              "actionId": 34,
+              "dataType": "object 对象: Object",
+              "defaultValue": "null",
+              "description": "返回结果",
+              "id": 375,
+              "list": [],
+              "name": "data",
+              "pclassName": "com.aai.bean.ResultUtil",
+              "pid": 372,
+              "required": true,
+              "returnd": true
+            }
+          ],
+          "type": "JSON类型数据"
+        }
+      },
+      "id": 34,
+      "methodUUID": "com.aai.controller.OtherController-getTemplate",
+      "moduleId": 4,
+      "name": "获取excel模板",
+      "requestDescription": null,
+      "responseDescription": null,
+      "sort": 2147483647
+    }
+  ],
+  "classList": "com.aai.controller.OtherController",
+  "id": 4,
+  "name": "公共接口",
+  "packageName": "com.aai",
+  "sort": 8
+}
+]
