@@ -93,7 +93,7 @@ export default {
 */
 .c__action-info-req-item {
   position : relative;
-  border   : 1px solid var(--c-border);
+  border   : 1px solid var(--c-border-thin);
 
   .req-item {
 
@@ -121,17 +121,17 @@ export default {
       }
 
       .name {
-        min-width   : 200px;
+        min-width   : 160px;
         font-weight : 800;
       }
 
       .desc {
-        color     : var(--c-font-sub);
-        min-width : 200px;
+        color      : var(--c-font-sub);
+        word-break : break-all;
       }
 
       .type {
-        min-width : 160px;
+        min-width : 200px;
 
       }
 

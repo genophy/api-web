@@ -39,7 +39,7 @@
           </div>
           <div class="req-op">
             <div class="req-op__item">
-              <el-button type="warning" size="mini" @click="handleMockSend(action.name,actionDetail)">发送</el-button>
+              <el-button type="warning" size="mini" @click="handleMockSend(action.id, action.name,actionDetail)">发送请求</el-button>
             </div>
           </div>
         </div>
@@ -53,15 +53,20 @@
               <i class="ixfont ix-cpy ly-hover ly-ml-16" @click="handleCpRespParams">{{ responseParams.length }}</i>
             </el-tooltip>
           </div>
-
-          <div class="req-op">
-            <div class="req-op__item">
-              <el-button type="success" size="mini" @click="handleViewResult(action.name,actionDetail)">查看示例</el-button>
-            </div>
-          </div>
         </div>
         <div class="resp-list">
           <CompActionInfoRespList :list="responseParams"></CompActionInfoRespList>
+        </div>
+        <div class="resp-result">
+          <div class="resp-result__header ly-py-4">
+            <el-button type="success" size="mini" :disabled="isSubmitting" @click="handleRefreshResponse">
+              <i class="ixfont ix-fresh ly-mr-8"></i>
+              刷新示例
+            </el-button>
+          </div>
+          <div v-if="responseExample" class="resp-result__body">
+            <CompViewResponse :text="responseExample"></CompViewResponse>
+          </div>
         </div>
       </div>
 
@@ -70,14 +75,15 @@
 </template>
 
 <script>
-import { ModalUtil } from '@/libs/util';
+import { CommonsUtil, HttpClientUtil, ModalUtil } from '@/libs/util';
 import CompActionInfoReqList from '@/views/main/components/CompActionInfoReqList';
 import CompActionInfoRespList from '@/views/main/components/CompActionInfoRespList';
 import CompParamsSend from '@/views/main/components/modal/CompParamsSend';
+import CompViewResponse from '@/views/main/components/modal/CompViewResponse';
 
 export default {
   name      : 'CompActionInfo',
-  components: {CompActionInfoRespList, CompActionInfoReqList},
+  components: {CompViewResponse, CompActionInfoRespList, CompActionInfoReqList},
   props     : {
     action: {
       type: Object
@@ -85,8 +91,10 @@ export default {
   },
   data() {
     return {
-      isQuerying  : false,    // 是否正在查询
-      isSubmitting: false    // 是否正在提交
+      isQuerying     : false,    // 是否正在查询
+      isSubmitting   : false,    // 是否正在提交
+      actionIdsOfResp: [],// 结果
+      responseExample: ''
     };
   },
   computed  : {
@@ -103,7 +111,7 @@ export default {
   watch     : {},
   created() {},
   mounted() {
-
+    this.responseExample = this.action?.responseExample || '{}';
   },
   beforeDestroy() {},
   methods   : {
@@ -114,22 +122,15 @@ export default {
 
     /**
      *  模拟发送
+     * @param actionId
      * @param actionName
      * @param actionDetail {mapping,requestMethod,requestParam:{params}}
      */
-    handleMockSend(actionName, actionDetail) {
+    handleMockSend(actionId, actionName, actionDetail) {
       const modal = new ModalUtil();
-      modal.openModal(CompParamsSend, {info: actionDetail}, {title: actionName || '模拟发送'}).then(() => {
+      modal.openModal(CompParamsSend, {actionId: actionId, info: actionDetail}, {title: actionName || '模拟发送'}).then(() => {
         modal.closeModal();
       });
-    },
-    /**
-     * 查看返回的结果
-     * @param actionName
-     * @param actionDetail
-     */
-    handleViewResult(actionName, actionDetail) {
-
     },
     /**
      * 复制
@@ -163,6 +164,23 @@ export default {
         this.$clipboard(text);
         ModalUtil.openMsgSuccess('复制成功');
       }
+    },
+    /**
+     * 刷新resp结果
+     */
+    handleRefreshResponse() {
+
+      if (this.isSubmitting) return;
+      this.isSubmitting = false;
+      HttpClientUtil.postJsonData('/apidoc/example.do', {
+        id: this.action.id
+      }).catch(err => {
+        this.responseExample = err?.responseExample || '{}';
+      }).finally(() => {
+        this.isSubmitting = false;
+      });
+
+
     }
     /* _____________________________________________________________________________________ */
     /* _____________________________________________________________________________________ */
@@ -262,14 +280,14 @@ export default {
     .info-title {
       display         : flex;
       justify-content : space-between;
-      padding         : 0 16px;
+      padding         : 0 0 0 16px;
       height          : 40px;
       line-height     : 40px;
       font-weight     : 800;
 
       &.req {
         color            : var(--c-white);
-        background-image : linear-gradient(to right, var(--c-blue), transparent);
+        background-image : linear-gradient(to right, var(--c-warn), transparent);
       }
 
       &.res {
@@ -283,8 +301,7 @@ export default {
       }
 
       .req-op {
-        display       : flex;
-        padding-right : 16px;
+        display : flex;
 
         &__item {
           flex-shrink : 0;

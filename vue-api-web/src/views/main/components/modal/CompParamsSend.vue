@@ -18,9 +18,13 @@
     <div class="c__params-send__body">
       <div class="c__params-send__side">
         <div class="header">
-          <div class="title  ">请求参数
-            <el-tooltip content="刷新" effect="dark">
-              <i class="ixfont ix-fresh ly-hover ly-ml-16" @click="handleFormatRequest"></i>
+          <div class="title">请求参数
+            <el-tooltip content="重置" effect="dark">
+              <i class="ixfont ix-fresh ly-hover ly-ml-16" @click="handleRestRequest"></i>
+            </el-tooltip>
+
+            <el-tooltip content="格式化" effect="dark">
+              <i class="ixfont ix-list ly-hover ly-ml-16" @click="handleFormatRequest"></i>
             </el-tooltip>
           </div>
           <div class="op">
@@ -50,27 +54,34 @@
 </template>
 
 <script>
-import { CommonsUtil, HttpClientUtil, ModalUtil } from '@/libs/util';
+import { CommonsUtil, Constants, HttpClientUtil, ModalUtil } from '@/libs/util';
 
 export default {
   name    : 'CompParamsSend',
   props   : {
-    info: {
+    actionId: {
+      type: [String, Number]
+    },
+    info    : {
       type: Object
     }
   },
   data() {
     return {
-      isQuerying       : false,    // 是否正在查询
-      isSubmitting     : false,    // 是否正在提交
-      requestParamsStr : '', // 请求参数
-      responseParamsStr: '' // 返回参数
+      isQuerying           : false,    // 是否正在查询
+      isSubmitting         : false,    // 是否正在提交
+      requestParamsStr     : '', // 请求参数
+      requestParamsStrCache: '', // 请求参数缓存
+      responseParamsStr    : '', // 返回参数
+      storageActionRequests: {}
     };
   },
   computed: {},
   watch   : {},
   created() {},
   mounted() {
+
+
     const field      = Object.create(null);
     const paramsList = this.$_rebuildParamsList(this.info?.requestParam?.params);
     paramsList.filter(item => item.label).map(item => {
@@ -86,8 +97,16 @@ export default {
     }).forEach(item => {
       field[item.label] = item.value;
     });
-    this.requestParamsStr = JSON.stringify(field || {}, null, '  ');
+    this.requestParamsStrCache = JSON.stringify(field || {}, null, '  ');
 
+
+    this.storageActionRequests = JSON.parse(localStorage.getItem(Constants.LOCAL_STORAGE.ACTION_REQUESTS)) || {};
+    const actionRequest        = this.storageActionRequests[`action_${this.actionId}`];
+    if (actionRequest) {
+      this.requestParamsStr = actionRequest;
+    } else {
+      this.requestParamsStr = this.requestParamsStrCache;
+    }
   },
   beforeDestroy() {},
   methods : {
@@ -98,11 +117,22 @@ export default {
 
 
     /**
+     * 重置request参数
+     */
+    handleRestRequest() {
+      this.requestParamsStr = this.requestParamsStrCache;
+      // 缓存请求参数
+      this.$_storeActionRequests();
+    },
+
+    /**
      * 格式化request
      */
     handleFormatRequest() {
       try {
         this.requestParamsStr = JSON.stringify(JSON.parse(this.requestParamsStr) || {}, null, ' ');
+        // 缓存请求参数
+        this.$_storeActionRequests();
       } catch (err) {
         ModalUtil.openMsgWarning(err.message || '格式化失败');
       }
@@ -113,15 +143,21 @@ export default {
      */
     handleSendRequest() {
       try {
+        if (this.isSubmitting) return;
+        this.isSubmitting   = false;
         const prefix        = process.env.VUE_APP_URL_PREFIX;
         const url           = this.info.mapping.replace(prefix, '');
         const requestParams = JSON.parse(this.requestParamsStr) || {};
+        // 缓存请求参数
+        this.$_storeActionRequests();
         switch (this.info.requestMethod) {
           case 'POST':
             HttpClientUtil.postJsonData(url, requestParams).then(data => {
               this.responseParamsStr = JSON.stringify(data || {}, null, ' ');
             }).catch(err => {
               this.responseParamsStr = JSON.stringify(err || {}, null, ' ');
+            }).finally(() => {
+              this.isSubmitting = false;
             });
             break;
           case 'GET':
@@ -129,11 +165,17 @@ export default {
               this.responseParamsStr = JSON.stringify(data || {}, null, ' ');
             }).catch(err => {
               this.responseParamsStr = JSON.stringify(err || {}, null, ' ');
+            }).finally(() => {
+              this.isSubmitting = false;
             });
-            ;
+            break;
+          default:
+            this.isSubmitting = false;
             break;
         }
       } catch (err) {
+        this.isSubmitting = false;
+        console.error(err.message);
         ModalUtil.openMsgWarning(err.message || '格式化失败');
       }
 
@@ -142,7 +184,30 @@ export default {
      * 保存response
      */
     handleSaveResponse() {
-      // this.responseParamsStr = JSON.stringify(JSON.parse(this.responseParamsStr) || {}, null, ' ');
+      if (this.isSubmitting) return;
+      this.isSubmitting = false;
+
+      const modal = new ModalUtil();
+      modal.openConfirm({title: '确定保存', msg: '保存后，即覆盖。请慎重操作'}).then(flag => {
+        if (flag) {
+          HttpClientUtil.postJsonData('/apidoc/saveResponse.do', {
+            actionId: this.actionId,
+            result  : this.responseParamsStr || '{}'
+          }).then(data => {
+            ModalUtil.openMsgSuccess('保存成功');
+          }).catch(err => {
+            if (err === true) {
+              ModalUtil.openMsgSuccess('保存成功');
+            } else {
+              ModalUtil.openMsgError('保存失败');
+            }
+          }).finally(() => {
+            this.isSubmitting = false;
+          });
+        }
+        modal.closeModal();
+      });
+
 
     },
     /* _____________________________________________________________________________________ */
@@ -154,7 +219,13 @@ export default {
     /* _____________________________________________________________________________________ */
     /* _____________________________________________________________________________________ */
     /* _____________________ [ private: *,query,fetch,action,init ] ________________________ */
-
+    /**
+     * 缓存请求参数
+     */
+    $_storeActionRequests() {
+      this.storageActionRequests[`action_${this.actionId}`] = this.requestParamsStr;
+      localStorage.setItem(Constants.LOCAL_STORAGE.ACTION_REQUESTS, JSON.stringify(this.storageActionRequests));
+    },
     /**
      * 重建参数列表
      * @param params

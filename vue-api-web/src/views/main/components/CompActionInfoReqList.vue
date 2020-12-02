@@ -81,7 +81,7 @@ export default {
 */
 .c__action-info-req-list {
   position : relative;
-  border   : 1px solid var(--c-border);
+  border   : 1px solid var(--c-border-thin);
 
   .req-list {
 

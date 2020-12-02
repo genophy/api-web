@@ -1,11 +1,11 @@
 <!--
   FileDesc  :
   webUrl    :
-  Author    : g_eno_phy (2020-12-01 20:24)
+  Author    : g_eno_phy (2020-12-02 18:09)
   Version   :
   Usage     :
     - template
-      <CompActionInfoRespList></CompActionInfoRespList>
+      <CompViewResponse></CompViewResponse>
     - props
     - event
     - method
@@ -13,49 +13,72 @@
 -->
 
 <template>
-  <div class="c__action-info-resp-list">
-    <div v-for="(item,idx) in list" :key="idx" class="resp-list">
-      <CompActionInfoRespItem :param="item" :seq="idx +1"></CompActionInfoRespItem>
+  <div class="c__view-response">
+    <div v-if="responseStr" class="btn-copy">
+      <el-tooltip content="复制" effect="dark">
+        <i class="ixfont ix-cpy ly-hover" @click="handleCopy(responseStr)"></i>
+      </el-tooltip>
     </div>
-
+    <div class="response-text">
+      <p v-html="responseHTML"></p>
+    </div>
   </div>
-
-
 </template>
 
 <script>
-import CompActionInfoRespItem from '@/views/main/components/CompActionInfoRespItem';
+import { ModalUtil } from '@/libs/util';
 
 export default {
-  name      : 'CompActionInfoRespList',
-  components: {CompActionInfoRespItem},
-  props     : {
-    // response params
-    list: {
-      type   : Array,
-      default: null
+  name    : 'CompViewResponse',
+  props   : {
+    text: {
+      type: String
     }
   },
   data() {
     return {
       isQuerying  : false,    // 是否正在查询
-      isSubmitting: false     // 是否正在提交
-
+      isSubmitting: false,    // 是否正在提交
+      responseStr : '',
+      responseHTML: ''
     };
   },
-  computed  : {},
-  watch     : {},
-  created() {
+  computed: {},
+  watch   : {
+    text: {
+      handler(v) {
+        try {
+          this.responseStr  = JSON.stringify(JSON.parse(this.text || '{}'), null, '  ');
+          this.responseHTML = this.responseStr.replace(/\n/g, '<br/>').replace(/\s/g, '&nbsp;');
+
+        } catch (err) {
+          this.responseStr  = '';
+          this.responseHTML = err.message || 'JSON解析错误';
+        }
+      },
+      immediate: true
+    }
   },
+  created() {},
   mounted() {
+
+
   },
   beforeDestroy() {},
-  methods   : {
+  methods : {
     /* _____________________________________________________________________________________ */
     /* _____________________________________________________________________________________ */
     /* _____________________________________________________________________________________ */
     /* _____________________ [ handle ] ____________________________________________________ */
 
+    /**
+     * 复制
+     * @param text
+     */
+    handleCopy(text) {
+      this.$clipboard(text);
+      ModalUtil.openMsgSuccess('复制成功');
+    }
     /* _____________________________________________________________________________________ */
     /* _____________________________________________________________________________________ */
     /* _____________________________________________________________________________________ */
@@ -65,6 +88,7 @@ export default {
     /* _____________________________________________________________________________________ */
     /* _____________________________________________________________________________________ */
     /* _____________________ [ private: *,query,fetch,action,init ] ________________________ */
+
 
   }
 };
@@ -79,59 +103,24 @@ export default {
     06.背景（background）
     07.其它样式(opacity,cursors,transform,...)
 */
-.c__action-info-resp-list {
-  position : relative;
-  border   : 1px solid var(--c-border-thin);
+.c__view-response {
+  position         : relative;
+  padding          : 16px;
+  color            : var(--c-dark);
+  background-color : var(--c-success-bg);
+  box-shadow       : var(--shadow);
 
-  .resp-list {
+  .btn-copy {
+    position : absolute;
+    z-index  : 1;
+    top      : 16px;
+    right    : 16px;
+  }
 
-
-    &__info {
-      display  : flex;
-      position : relative;
-      padding  : 8px 32px;
-
-      &.respuired:before {
-        content          : '';
-        display          : block;
-        position         : absolute;
-        top              : 30%;
-        left             : 16px;
-        height           : 40%;
-        width            : 6px;
-        background-image : linear-gradient(to right, var(--c-error), transparent);
-      }
-
-      .name {
-        min-width   : 100px;
-        font-weight : 800;
-      }
-
-      .label {
-        min-width : 200px;
-      }
-
-      .desc {
-        color     : var(--c-font-sub);
-        min-width : 200px;
-      }
-
-      .type {
-        min-width : 100px;
-
-      }
-
-      .value {
-        min-width : 100px;
-      }
-
-
-    }
-
-    &__children {
-      padding : 16px 56px;
-    }
+  .response-text {
+    max-height : 400px;
+    font-size  : 12px;
+    overflow   : auto;
   }
 }
 </style>
-

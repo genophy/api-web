@@ -16,11 +16,11 @@
   <div class="v__main ly-h-full ly-p-16">
     <div class="v__main__header header ">
       <div class="header__title">
-        <h1>接口查看器</h1>
+        <h1>{{ projectName }}</h1>
       </div>
       <div class="header__op">
         <div class="btn-group">
-          <el-button type="primary" @click="handleSetProject">设置项目参数</el-button>
+          <!--          <el-button type="primary" @click="handleSetProject">设置项目参数</el-button>-->
           <el-button type="success" @click="handleSetStorage">设置Token</el-button>
         </div>
         <div class="theme-toggle">
@@ -30,31 +30,31 @@
       </div>
     </div>
     <!-- 项目介绍 -->
-    <div class="v__main__intro">
-      <div class="intro-group">
-        <div class="intro-item">
-          <div class="label">名称</div>
-          <div class="value">{{ projectInfo.name }}</div>
-          <div class="op ly-hover">
-            <i class="ixfont ix-cpy" @click="handleCpText(projectInfo.name)"></i>
+    <!--    <div class="v__main__intro">
+          <div class="intro-group">
+            <div class="intro-item">
+              <div class="label">名称</div>
+              <div class="value">{{ projectInfo.name }}</div>
+              <div class="op ly-hover">
+                <i class="ixfont ix-cpy" @click="handleCpText(projectInfo.name)"></i>
+              </div>
+            </div>
+            <div class="intro-item">
+              <div class="label">请求地址</div>
+              <div class="value">{{ projectInfo.url }}</div>
+              <div class="op ly-hover">
+                <i class="ixfont ix-cpy" @click="handleCpText(projectInfo.url)"></i>
+              </div>
+            </div>
+            <div class="intro-item">
+              <div class="label">前缀</div>
+              <div class="value">{{ projectInfo.prefix }}</div>
+              <div class="op ly-hover">
+                <i class="ixfont ix-cpy" @click="handleCpText(projectInfo.prefix)"></i>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="intro-item">
-          <div class="label">请求地址</div>
-          <div class="value">{{ projectInfo.url }}</div>
-          <div class="op ly-hover">
-            <i class="ixfont ix-cpy" @click="handleCpText(projectInfo.url)"></i>
-          </div>
-        </div>
-        <div class="intro-item">
-          <div class="label">前缀</div>
-          <div class="value">{{ projectInfo.prefix }}</div>
-          <div class="op ly-hover">
-            <i class="ixfont ix-cpy" @click="handleCpText(projectInfo.prefix)"></i>
-          </div>
-        </div>
-      </div>
-    </div>
+        </div>-->
     <!-- 接口内容 -->
     <div v-if="apiList && apiList[0]" class="v__main__body body ">
       <div class="body__side">
@@ -85,6 +85,7 @@ export default {
     return {
       isQuerying  : false,    // 是否正在查询
       isSubmitting: false,     // 是否正在提交
+      projectName : process.env.VUE_APP_PROJECT_NAME,
       theme       : '', // 主题名称
       themeList   : [
         {name: 'default', color: '#fff'},
@@ -104,12 +105,12 @@ export default {
     this.theme = localStorage.getItem(Constants.LOCAL_STORAGE.THEME) || 'default';
   },
   mounted() {
-    // HttpClientUtil.get('/apidoc/allInfo.do').then(data => {
-    //   this.apiList = data;
-    // }).catch(data => {
-    //   this.apiList = data;
-    // });
-    this.apiList = require('@/assets/mock/result.json');
+    HttpClientUtil.get('/apidoc/allInfo.do').then(data => {
+      this.apiList = data;
+    }).catch(data => {
+      this.apiList = data;
+    });
+    // this.apiList = require('@/assets/mock/result.json');
   },
   beforeDestroy() {},
   methods   : {
@@ -242,7 +243,7 @@ export default {
 
   &__side {
     flex-shrink  : 0;
-    width        : 400px;
+    width        : 300px;
     border-right : 1px solid var(--c-border);
     padding      : 16px;
     overflow     : auto;

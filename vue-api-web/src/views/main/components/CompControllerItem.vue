@@ -23,7 +23,7 @@
           <div class="value">{{ controllerClassName }}</div>
         </div>
 
-        <div class="btn-cp ly-hover" @click="handleCopy">
+        <div class="btn-cp ly-hover" @click="handleCopy(controllerClassName)">
           <i class="ixfont ix-cpy"></i>
         </div>
       </div>

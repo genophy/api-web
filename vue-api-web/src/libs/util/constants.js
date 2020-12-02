@@ -15,10 +15,11 @@ export default class Constants {
    * @type {{MENU_LIST_SEQ: string, ROUTE_LIST: string, BTN_PERMISSION_LIST: string, MENU_LIST: string, USER_NAME: string, ROUTE_LIST_SEQ: string}}
    */
   static  LOCAL_STORAGE = {
-    TOKEN    : `${this.STORAGE_PREFIX}LOCAL_TOKEN`,
-    USER_NAME: `${this.STORAGE_PREFIX}LOCAL_STORAGE_USER_NAME`, // 用户名
-    THEME    : `${this.STORAGE_PREFIX}LOCAL_STORAGE_THEME`, // 主题
-    PROJECT  : `${this.STORAGE_PREFIX}LOCAL_STORAGE_PROJECT` // 项目名
+    TOKEN          : `${this.STORAGE_PREFIX}LOCAL_TOKEN`,
+    USER_NAME      : `${this.STORAGE_PREFIX}LOCAL_STORAGE_USER_NAME`, // 用户名
+    THEME          : `${this.STORAGE_PREFIX}LOCAL_STORAGE_THEME`, // 主题
+    PROJECT        : `${this.STORAGE_PREFIX}LOCAL_STORAGE_PROJECT`, // 项目名
+    ACTION_REQUESTS: `${this.STORAGE_PREFIX}LOCAL_STORAGE_ACTION_REQUESTS` // action请求对象 {'action_{id}':{}}
   };
 
   /** mark modal 组件关闭的时间间隙： 默认300毫秒。点击关闭，触发隐藏动画（300毫秒），之后直接删除元素 */

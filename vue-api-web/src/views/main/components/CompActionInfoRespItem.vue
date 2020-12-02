@@ -16,15 +16,15 @@
   <div class="c__action-info-resp-item">
 
     <div class="resp-item">
-      <div class="resp-item__info" :class="{required:param.required}">
+      <div class="resp-item__info" :class="{required:compParam.required}">
         <div class="seq">{{ seq || 0 }}</div>
-        <div class="name">{{ param.name || '-' }}</div>
-        <div class="type">{{ param.dataType || '-' }}</div>
-        <div class="value">{{ param.defaultValue || '-' }}</div>
-        <div class="desc">{{ param.description || '-' }}</div>
+        <div class="name">{{ compParam.name || '-' }}</div>
+        <div class="type">{{ compParam.dataType || '-' }}</div>
+        <div class="value">{{ compParam.defaultValue || '-' }}</div>
+        <div class="desc">{{ compParam.description || '-' }}</div>
       </div>
-      <div v-if="param.list && param.list[0]" class="resp-item__children">
-        <CompActionInfoRespItem :list="param.list"></CompActionInfoRespItem>
+      <div v-if="compParam.list && compParam.list[0]" class="resp-item__children">
+        <CompActionInfoRespList :list="compParam.list"></CompActionInfoRespList>
       </div>
 
     </div>
@@ -36,9 +36,12 @@
 
 <script>
 
+import CompActionInfoRespList from '@/views/main/components/CompActionInfoRespList';
+
 export default {
-  name    : 'CompActionInfoRespItem',
-  props   : {
+  name      : 'CompActionInfoRespItem',
+  components: {CompActionInfoRespList},
+  props     : {
     param: {
       type   : Object,
       default: null
@@ -51,18 +54,21 @@ export default {
   data() {
     return {
       isQuerying  : false,    // 是否正在查询
-      isSubmitting: false     // 是否正在提交
-
+      isSubmitting: false    // 是否正在提交
     };
   },
-  computed: {},
-  watch   : {},
+  computed  : {
+    compParam() {
+      return this.param || {};
+    }
+  },
+  watch     : {},
   created() {
   },
   mounted() {
   },
   beforeDestroy() {},
-  methods : {
+  methods   : {
     /* _____________________________________________________________________________________ */
     /* _____________________________________________________________________________________ */
     /* _____________________________________________________________________________________ */
@@ -93,7 +99,7 @@ export default {
 */
 .c__action-info-resp-item {
   position : relative;
-  border   : 1px solid var(--c-border);
+  border   : 1px solid var(--c-border-thin);
 
   .resp-item {
 
@@ -121,7 +127,7 @@ export default {
       }
 
       .name {
-        min-width   : 200px;
+        min-width   : 160px;
         font-weight : 800;
       }
 
@@ -131,7 +137,7 @@ export default {
       }
 
       .type {
-        min-width : 160px;
+        min-width : 200px;
 
       }
 
@@ -143,7 +149,7 @@ export default {
     }
 
     &__children {
-      padding : 16px 56px;
+      padding : 16px 2px 16px 56px;
     }
   }
 }
